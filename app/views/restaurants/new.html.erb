@@ -1,0 +1,30 @@
+<div class=container>
+  <h1>New Restaurant</h1>
+
+  <%= form_with model: @restaurant do |form| %>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </div>
+
+    <div>
+      <%= form.label :address %><br>
+      <%= form.text_area :address %>
+    </div>
+
+  <div>
+      <%= form.label :phone_number %><br>
+      <%= form.text_area :phone_number %>
+    </div>
+
+  <div>
+      <%= form.label :category %><br>
+      <%= form.text_area :category %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+  <p><%= link_to "Back to the restaurants", restaurants_path%></p>
+</div>

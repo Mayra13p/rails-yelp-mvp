@@ -1,0 +1,8 @@
+<div class='contaniner'>
+  <h2>Reviews</h2>
+  <ol>
+    <% @reviews.each do |r| %>
+      <li class="card"><%= r.content %> (Rating: <%= r.rating %>)</li>
+    <% end %>
+  </ol>
+</div>

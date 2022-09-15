@@ -1,0 +1,49 @@
+<div class=container>
+
+  <div>
+    <h1><%= @restaurant.name %></h1>
+
+    <p><%= @restaurant.address %></p>
+    <p><%= @restaurant.phone_number %></p>
+    <p><%= @restaurant.category %></p>
+
+    <% link_to "Edit this", edit_restaurant_path%>
+    <%= link_to "Delete this", restaurant_path(@restaurant), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    }%>
+  </div>
+  <div>
+    <h2>Reviews</h2>
+    <% @restaurant.reviews.each do |review| %>
+      <p>
+        <strong>Rating:</strong>
+        <%= review.rating %>
+      </p>
+
+      <p>
+        <strong>Content:</strong>
+        <%= review.content %>
+      </p>
+    <% end %>
+  </div>
+
+  <div>
+    <h2>Add a review:</h2>
+    <%= form_with model: [ @restaurant, @restaurant.reviews.build ] do |form| %>
+      <p>
+        <%= form.label :rating %><br>
+        <%= form.text_field :rating %>
+      </p>
+      <p>
+        <%= form.label :content %><br>
+        <%= form.text_area :content %>
+      </p>
+      <p>
+        <%= form.submit %>
+      </p>
+    <% end %>
+  <div>
+
+  <p><%= link_to "Back to the restaurants", restaurants_path%></p>
+</div>
