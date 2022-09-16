@@ -47,6 +47,7 @@ gem "bootsnap", require: false
 
 # Gems for the project
 gem "simple_form", github: "heartcombo/simple_form"
+gem 'faker', '~> 2.23'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -1,13 +1,17 @@
-<div class=container>
-  <h1>Yelp</h1>
+<div class='container p-4'>
+  <nav class="navbar bg-light px-3">
+    <h1 class="display-1">Yelp</h1>
+  </nav>
 
-  <ul>
-    <% @restaurants.each do |restaurant| %>
-    <li>
-      <%= link_to restaurant.name, restaurant  %>
-    </li>
-    <% end %>
-  </ul>
+  <div class='py-4'>
+    <ul class="list-group list-group-flush text-center">
+      <% @restaurants.each do |restaurant| %>
+      <a href="#" class="list-group-item text-bg-light p-3">
+        <%= link_to restaurant.name, restaurant  %>
+      </a>
+      <% end %>
+    </ul>
+  </div>
 
-  <p><%= link_to "Enter a new restaurant", new_restaurant_path%></p>
+  <div class="p-5 text-end fw-lighter"><%= link_to "Enter a new restaurant", new_restaurant_path%></div>
 </div>

@@ -19,6 +19,7 @@ class RestaurantsController < ApplicationController
       redirect_to @restaurant
     else
       render :new
+      # If you want to render the view that corresponds to a different template within the same controller, you can use render with the name of the view
     end
   end
 
@@ -31,7 +32,6 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
-    # @restaurant.reviews.clear
     @restaurant.destroy
     redirect_to restaurants_path, status: :see_other
   end

@@ -1,30 +1,34 @@
-<div class=container>
+<div class='container p-4'>
   <h1>New Restaurant</h1>
 
-  <%= form_with model: @restaurant do |form| %>
-    <div>
+  <%= simple_form_for(@restaurant) do |form| %>
+    <div class="mb-3">
+
       <%= form.label :name %><br>
       <%= form.text_field :name %>
     </div>
 
-    <div>
+    <div class="mb-3">
       <%= form.label :address %><br>
       <%= form.text_area :address %>
     </div>
 
-  <div>
+    <div class="mb-3">
       <%= form.label :phone_number %><br>
       <%= form.text_area :phone_number %>
     </div>
 
-  <div>
+    <div class="mb-3">
       <%= form.label :category %><br>
       <%= form.text_area :category %>
     </div>
 
-    <div>
+    <div class="mb-3">
       <%= form.submit %>
     </div>
   <% end %>
-  <p><%= link_to "Back to the restaurants", restaurants_path%></p>
+
+  <div class="p-5 text-end fw-lighter">
+    <p><%= link_to "Back to the restaurants", restaurants_path%></p>
+  </div>
 </div>

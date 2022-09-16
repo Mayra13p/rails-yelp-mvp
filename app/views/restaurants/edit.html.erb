@@ -1,7 +1,7 @@
 <div class=container>
   <h1>New Restaurant</h1>
 
-  <%= form_with model: @restaurant do |form| %>
+  <%= simple_form_for (@restaurant) do |form| %>
     <div>
       <%= form.label :name %><br>
       <%= form.text_field :name %>
